@@ -12,7 +12,7 @@ my $editor = $ENV{EDITOR} || 'vim';
 
 sub edit_string {
   my $text = shift;
-  my $f = new File::Temp();
+  my $f = new File::Temp(SUFFIX => '.json');
   my $name = $f->filename;
   print $f $text;
   $f->close();
